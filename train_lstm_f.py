@@ -104,6 +104,9 @@ def main():
         X_train = np.array(tokenize(X_train, vocab, config.max_len))
         X_test = np.array(tokenize(X_test, vocab, config.max_len))
 
+        print(X_train.shape)
+        print(X_test.shape)
+
         all_related_columns = [TOXICITY_COLUMN] + AUX_TOXICITY_COLUMNS + IDENTITY_COLUMNS
         negative_indices = np.arange(0, len(train))[
             (train[all_related_columns] == 0.0).sum(axis=1) == len(all_related_columns)]

@@ -7,7 +7,7 @@ from torch.utils.data import Dataset, Sampler, DataLoader
 
 class TextDataset(Dataset):
 
-    def __init__(self, token_lists: List[List[int]], targets: np.ndarray = None, identities: np.ndarray = None,
+    def __init__(self, token_lists: list[list[int]], targets: np.ndarray = None, identities: np.ndarray = None,
                  annotator_counts: np.ndarray = None):
         assert targets is None or type(targets) == np.ndarray
         assert identities is None or type(identities) == np.ndarray
