@@ -1,10 +1,11 @@
 from multiprocessing.pool import Pool
 from typing import List, TypeVar
 
-from pytorch_pretrained_bert import PreTrainedTokenizer
+from pytorch_pretrained_bert import BertTokenizer
 from tqdm import tqdm
 
-Tokenizer = TypeVar('Tokenizer', bound=PreTrainedTokenizer)
+# Tokenizer = TypeVar('Tokenizer', bound=BertTokenizer)
+Tokenizer = BertTokenizer.from_pretrained('bert-base-uncased')
 
 
 class MyTokenizer:
